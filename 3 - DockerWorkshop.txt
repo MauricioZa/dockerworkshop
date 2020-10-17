@@ -1,0 +1,19 @@
+3.1) Create an Azure Container registry (portal)
+
+3.2) Enable admin user (portal)
+
+3.3) Get registry name, user & password (portal)
+
+3.4) Login to registry from Docker
+docker login mauriciozaragoza.azurecr.io
+
+3.5) Create an alias for the image
+docker tag helloworld mauriciozaragoza.azurecr.io/samples/helloworld
+
+3.6) Push the image to your registry
+docker push mauriciozaragoza.azurecr.io/samples/helloworld
+
+3.7) Check the uploaded image (portal)
+
+3.8) Pull the image from your registry
+docker pull mauriciozaragoza.azurecr.io/samples/helloworld
