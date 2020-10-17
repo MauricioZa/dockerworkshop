@@ -1,0 +1,41 @@
+4.1) Copy file from Git repository
+https://github.com/MauricioZa/dockerworkshop
+
+4.2) Extract to local folder
+
+4.3) Cd to extracted folder
+
+4.4) Remove existing Dockerfile
+remove-Item Dockerfile
+
+4.5) Create Dockerfile
+New-Item -Name Dockerfile -ItemType file
+
+4.6.1) Edit Dockerfile
+Notepad Dockerfile
+
+4.6.2) Fill Dockerfile
+
+FROM mcr.microsoft.com/dotnet/core/sdk:2.1 AS build-env
+WORKDIR /app
+
+COPY *.csproj ./
+RUN dotnet restore 
+
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.1
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "asp-net-getting-started.dll"]
+
+
+4.7) Build the image from the Dockerfile
+docker build -t my-asp-app .
+
+4.8) Build a container from the image
+docker run -d -p 5000:80 --name myapp my-asp-app
+
+4.9) Browse the application locally
+http://localhost:5000
