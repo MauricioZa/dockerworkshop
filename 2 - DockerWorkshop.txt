@@ -19,4 +19,3 @@ docker commit <containerid> helloworld
 
 2.7) Verify new image has been created
 docker images
-
