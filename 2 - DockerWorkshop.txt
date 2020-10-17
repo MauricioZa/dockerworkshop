@@ -1,0 +1,22 @@
+2.1) Pull the nanoserver image
+docker pull mcr.microsoft.com/windows/nanoserver:1903
+
+2.2) Check images
+docker images
+
+2.3) Run a windows container
+docker run -it mcr.microsoft.com/windows/nanoserver:1903 cmd.exe
+
+2.4) Work inside the container
+echo "Hello World!" > Hello.txt
+exit
+
+2.5) Get ID for container
+docker ps -a
+
+2.6) Create image from modified container
+docker commit <containerid> helloworld
+
+2.7) Verify new image has been created
+docker images
+
