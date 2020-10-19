@@ -41,4 +41,4 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $Virt
 write-host "The public IP is        :   [$($pip.ipaddress)]" -foregroundcolor green
 write-host "The username is         :   dockeradmin" -foregroundcolor green
 write-host "The password is         :   @DockerWorkshop2020!!" -foregroundcolor green
-write-host "The resource group is   :   [$($ResourceGroupName.ResourceGroupName)]" -foregroundcolor green
+write-host "The resource group is   :   [$ResourceGroupName]" -foregroundcolor green
