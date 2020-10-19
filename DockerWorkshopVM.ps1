@@ -36,3 +36,9 @@ $VirtualMachine         = Set-AzVMSourceImage -VM $VirtualMachine -PublisherName
 
 # Create VM
 New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $VirtualMachine -Verbose
+
+# Publish information
+write-host "The public IP is        :   [$($pip.ipaddress)]" -foregroundcolor green
+write-host "The username is         :   dockeradmin" -foregroundcolor green
+write-host "The password is         :   @DockerWorkshop2020!!" -foregroundcolor green
+write-host "The resource group is   :   [$($ResourceGroupName.ResourceGroupName)]" -foregroundcolor green
